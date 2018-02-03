@@ -1,0 +1,6 @@
+
+然后将存储引擎修改回InnDB。使用如下命令：  alter table test_user engine=InnoDB;此命令执行时间大约耗时5分钟，耐心等待。
+
+insert ignore into user_info (last_name,first_name) values ('x','y');
+这样一来，如果表中已经存在last_name='x'且first_name='y'的数据，就不会插入，如果没有就会插入一条新数据。
+上面的是一种用法， 也可以用 INSERT .... SELECT 来实现。
